@@ -5,6 +5,8 @@ Short log of what got done, newest first.
 ## 2026-11-17
 
 - Site refocused: photography first, dev discovered from it (decision 0002). Phases reordered.
+- GitHub Project board, Phase 1 milestone and first issues (#5–#8). Session-start rule in CLAUDE.md.
+- Routes decided: `/` entry choice, `/photo`, `/dev`.
 
 ## 2026-11-16
 
