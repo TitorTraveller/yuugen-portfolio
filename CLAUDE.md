@@ -20,6 +20,16 @@ Personal site of Matías Berríos: a photography portfolio first, which is also 
 - If you spot a bug in his code, say so directly. If he corrects yours, adjust.
 - Reply in Spanish (Chile); code, names and commits in English.
 
+## Work tracking
+
+Work state lives on GitHub, not in conversation memory.
+
+- **Session start:** run `gh issue list` and check the current milestone before proposing work. Issues labeled `priority: high` go first.
+- **Board:** GitHub Project "Yuugen Portfolio" (Todo · In Progress · Done), linked to this repo.
+- **Milestones = phases.** Every issue in the current phase belongs to its milestone.
+- **Where things go:** issues = what to do · PRs = how it was done, plus evidence (CI, Vercel preview) · `docs/decisiones/` = why · `BITACORA.md` = what happened and when.
+- **Closing:** a PR that implements an issue says `Closes #<n>` in its description. A PR that only documents an idea doesn't.
+
 ## Stack
 
 Confirmed:

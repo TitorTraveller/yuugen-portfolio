@@ -29,6 +29,7 @@ Each option has its own animation, matching its style.
 
 **UI and animation**
 
+- **Pending:** the animation concepts aren't defined yet. Build the static version first. It's needed anyway for `prefers-reduced-motion`.
 - Two animation styles: photo (analog, film) and dev (code, technical). They have to be different, but feel like they belong to the same site.
 - Respect `prefers-reduced-motion`: without animation, the choice still works and makes sense (WCAG 2.3.3).
 - If an animation lasts more than 5 seconds or loops, it needs a way to pause or skip it (WCAG 2.2.2).
@@ -40,6 +41,16 @@ Each option has its own animation, matching its style.
 
 **Architecture**
 
+- **Decided (2026-11-17): routes.**
+
+  ```
+  /              Entry choice: Photo · Dev
+  /photo         Gallery (and /photo/[series])
+  /dev           Dev side (and /dev/[case-study])
+  ```
+
+  Each roll has its own `layout.tsx`, with its own navigation and style. The choice is two plain links. It's not remembered for now: `/` shows it on every visit. Add that only if it becomes annoying.
+  Rejected: gallery at `/` with a first-visit overlay. It needs a cookie, and it's close to the "wall" this doc wants to avoid.
 - Each roll is a route with its own URL, not state that lives only in JavaScript. That keeps it shareable, indexable and working without JS.
 - The animations go in client components. The rest of the page stays a Server Component.
 - Open question: the site-wide navigation changes depending on the roll (Photo vs. Dev). Define it together with this screen.
