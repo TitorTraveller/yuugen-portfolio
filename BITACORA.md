@@ -2,6 +2,10 @@
 
 Short log of what got done, newest first.
 
+## 2026-11-17
+
+- Site refocused: photography first, dev discovered from it (decision 0002). Phases reordered.
+
 ## 2026-11-16
 
 - Vercel connected to GitHub: preview deployment per PR, production on merge to `main`.

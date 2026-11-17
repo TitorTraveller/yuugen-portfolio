@@ -1,6 +1,14 @@
-# CLAUDE.md · Dev + Photography Portfolio
+# CLAUDE.md · Photography + Dev Portfolio
 
-Personal site of Matías Berríos: frontend developer portfolio + photography gallery + tools Lab.
+Personal site of Matías Berríos: a photography portfolio first, which is also his frontend developer portfolio. Visitors come for the photos and discover that the site itself is the dev work.
+
+## Product direction
+
+- **Photography first.** The site's look and feel is artistic. It must not read as "developer who also takes photos".
+- **Entry choice (high priority):** the visitor picks which "roll" to load, Photo or Dev, each with its own animation. See `docs/design/entry-roll-choice.md` before any work on the home page, routes, navigation or animations.
+- **Behind the photo:** each photo and gallery feature has a discreet layer showing how it's built (shot data, image delivery, accessibility decisions). The site is the main dev case study.
+- **Direct door to dev:** `/dev` is always reachable with one click (footer or colophon) and works as a direct link for a CV.
+- Rationale: `docs/decisiones/0002-photography-first.md`.
 
 ## Working mode (Augmented Coding)
 
@@ -26,13 +34,21 @@ Confirmed:
 
 Proposed (confirmed when each phase starts):
 
-- Content: MDX for case studies (Phase 1)
+- Content: MDX files in `content/` with frontmatter, loaded with `next-mdx-remote` (Phase 2)
 - Lab: native TypeScript with no runtime dependencies, mounted as islands (Phase 3)
 - Playwright + axe for e2e and accessibility, Storybook and Lighthouse CI (Phase 4)
 
+## Phases
+
+0. **Foundation:** done (tests, CI, Vercel previews, protected `main`).
+1. **Experience and gallery:** entry roll choice, photo gallery, navigation for each roll. Design before code.
+2. **Dev side:** `/dev`, MDX case studies (starting with the site itself), "behind the photo" layer.
+3. **Lab:** tools, once there's something worth showing.
+4. **Quality:** e2e, accessibility audits, Storybook, Lighthouse CI.
+
 Not yet:
 
-- **Gallery:** shape and design undefined; explored in Phase 2. Don't assume a layout, lightbox or data structure.
+- **Gallery layout:** being designed in Phase 1. Don't assume a layout, lightbox or data structure until the design is agreed.
 - **Image pipeline with `sharp`:** postponed. Use `next/image` in the meantime.
 
 ## Commands
@@ -48,7 +64,7 @@ Not yet:
 - Conventional Commits (`feat:`, `fix:`, `docs:`, `test:`, `refactor:`, `chore:`).
 - Branches `feat/<task>`; small PRs, one per issue.
 - Accessibility WCAG 2.2 AA at minimum: keyboard navigation, visible focus, alt text on every photo.
-- Non-obvious decisions → short note in `docs/decisiones/`.
+- Non-obvious decisions → short note in `docs/decisiones/`. Design explorations → `docs/design/`.
 - When closing a task, suggest 1–3 lines for `BITACORA.md`.
 
 ## Structure
